@@ -794,7 +794,7 @@ def find_email(file1):
 
 find_email("userdata.txt")
 '''
-
+'''
 def write(file,file1):
     with open(file,"r") as file:
         filedata = file.read()
@@ -805,3 +805,22 @@ def write(file,file1):
         #print(file1data)
 
 write("userdata.txt", "file1.txt")
+'''
+def simulate(entries, s):
+    """
+    :param entries: (list(int)) The numerical record files
+    :returns: (list(int)) The record files after running the malware
+    """
+    # Write your code here
+    for i in range(0,s):
+        entries[i] = -1
+
+    for i in range(1, s+1):
+        entries[-i] = -1
+    return entries
+
+records = [ 4, 1, 3, 5, 4, 7, 9 ]
+print(simulate(records, 3))
+
+records = [ 7, 6, 9, 1, 8, 3, 2 ]
+print(simulate(records, 2))
